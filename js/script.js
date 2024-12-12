@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Define the links for each day
   const surprises = {
-      day1: '../html/imageCircle.html',
+      day1: 'html/imageCircle.html',
       day2: 'surprise2.html',
       day3: 'surprise3.html',
       day4: 'surprise4.html',
