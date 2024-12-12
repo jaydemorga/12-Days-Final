@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,8 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #000; /* Black background */
+            background-color: #000;
+            /* Black background */
             padding: 0 10px;
         }
 
@@ -28,7 +30,8 @@
             height: auto;
             max-height: 400px;
             border-radius: 8px;
-            border: 5px solid #ff69b4; /* Pink border */
+            border: 5px solid #ff69b4;
+            /* Pink border */
             transition: opacity 0.5s ease-in-out;
             opacity: 1;
         }
@@ -60,6 +63,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="gallery-container">
         <a href="../index.html">Back</a>
@@ -68,45 +72,57 @@
     </div>
 
     <script>
-        const images = [
-            '../assets/IMG_2047.HEIC',
-            '../assets/IMG_2072.HEIC',
-            '../assets/IMG_2165.HEIC',
-            '../assets/IMG_6441.HEIC',
-            '../assets/IMG_6453.HEIC',
-            '../assets/IMG_6471.HEIC',
-            '../assets/IMG_6481.HEIC',
-            '../assets/IMG_6489.HEIC',
-            '../assets/IMG_6497.HEIC',
-            '../assets/IMG_6500.HEIC',
-            '../assets/IMG_6509.HEIC',
-            '../assets/IMG_6511.HEIC',
-            '../assets/IMG_6547.HEIC',
-            '../assets/IMG_6627.HEIC',
-            '../assets/IMG_6681.HEIC',
-            '../assets/IMG_6735.HEIC',
-            '../assets/IMG_6740.HEIC',
-            '../assets/IMG_6744.HEIC',
-            '../assets/IMG_6770.HEIC'
-            
-        ];
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = [
+                '../assets/IMG_2047.HEIC',
+                '../assets/IMG_2072.HEIC',
+                '../assets/IMG_2165.HEIC',
+                '../assets/IMG_6441.HEIC',
+                '../assets/IMG_6453.HEIC',
+                '../assets/IMG_6471.HEIC',
+                '../assets/IMG_6481.HEIC',
+                '../assets/IMG_6489.HEIC',
+                '../assets/IMG_6497.HEIC',
+                '../assets/IMG_6500.HEIC',
+                '../assets/IMG_6509.HEIC',
+                '../assets/IMG_6511.HEIC',
+                '../assets/IMG_6547.HEIC',
+                '../assets/IMG_6627.HEIC',
+                '../assets/IMG_6681.HEIC',
+                '../assets/IMG_6735.HEIC',
+                '../assets/IMG_6740.HEIC',
+                '../assets/IMG_6744.HEIC',
+                '../assets/IMG_6770.HEIC'
+            ];
 
-        let currentIndex = 0;
+            let currentImageIndex = 0;
 
-        const galleryImage = document.getElementById('galleryImage');
-        const nextButton = document.getElementById('nextButton');
+            // Get the image container and the button
+            const imageContainer = document.getElementById('galleryImage');  // Corrected the ID to galleryImage
+            const nextButton = document.getElementById('nextButton');
 
-        nextButton.addEventListener('click', () => {
-            galleryImage.style.opacity = 0; // Fade out the current image
-            setTimeout(() => {
-                currentIndex++;
-                if (currentIndex >= images.length) {
-                    currentIndex = 0;  // Loop back to the first image
-                }
-                galleryImage.src = images[currentIndex];
-                galleryImage.style.opacity = 1; // Fade in the new image
-            }, 500); // Delay the image change until after the fade-out
+            // Update the image
+            function updateImage() {
+                imageContainer.src = images[currentImageIndex];
+            }
+
+            // Move to the next image
+            function nextImage() {
+                currentImageIndex = (currentImageIndex + 1) % images.length; // Loop back to the first image when reaching the end
+                imageContainer.classList.remove('transition'); // Reset transition class
+                setTimeout(() => {
+                    imageContainer.classList.add('transition'); // Reapply transition after the image change
+                    updateImage();
+                }, 50); // Delay to allow transition to reset before updating the image
+            }
+
+            // Attach event listener to the button
+            nextButton.addEventListener('click', nextImage);
+
+            // Initial image load
+            updateImage();
         });
     </script>
 </body>
+
 </html>
