@@ -6,11 +6,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
     flex-direction: column;
+    height: 100%; /* Ensure body takes full height */
+    margin: 0;
+    overflow-y: scroll; /* Enable vertical scrolling */
 }
 
+/* Title styling */
 h1 {
     color: #FF1493; /* Hot pink color for the title */
     text-align: center;
@@ -24,9 +26,10 @@ h1 {
     grid-template-columns: repeat(4, 1fr); /* 4 columns */
     grid-template-rows: repeat(3, 1fr); /* 3 rows */
     gap: 20px;
-    width: 90vw; /* Ensure grid takes 90% of viewport width  */
+    width: 90vw; /* Ensure grid takes 90% of viewport width */
     max-width: 1000px;
     margin: 0 auto;
+    padding-bottom: 50px; /* Add padding to the bottom to avoid content being cut off */
 }
 
 /* Grid item (box) */
@@ -92,9 +95,11 @@ h1 {
     }
 }
 
+/* For very small screens like phones */
 @media (max-width: 500px) {
     .grid {
-        grid-template-columns: 1fr; /* 1 column for very small screens */
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for small screens */
+        grid-template-rows: repeat(6, 1fr); /* 6 rows to display all boxes */
         width: 100%; /* Take up full width on very small screens */
     }
 
