@@ -31,17 +31,25 @@ h1 {
 
 /* Grid item (box) */
 .box {
-    background-color: #FF1493; /* Pink background for boxes */
-    color: #fff;
-    font-size: 1.2rem;
+    width: 150px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    border-radius: 10px;
-    cursor: pointer;
+    font-size: 14px;  /* Adjust font size */
     text-align: center;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 10px;
+    border: 2px solid #FF1493; /* Pink border */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Media Query for smaller screens like phones */
+@media (max-width: 768px) {
+    .box {
+        width: 120px;
+        height: 120px;
+        font-size: 12px;  /* Adjust font size for better visibility */
+    }
 }
 
 .box:hover {
@@ -58,7 +66,7 @@ h1 {
 
 /* Surprise message */
 #surpriseMessage {
-    color: #18ff14; /* Pink color for surprise message */
+    color: #FF1493; /* Pink color for surprise message */
     text-align: center;
     margin-top: 20px;
     font-size: 1.2rem;
