@@ -24,7 +24,7 @@ h1 {
     grid-template-columns: repeat(4, 1fr); /* 4 columns */
     grid-template-rows: repeat(3, 1fr); /* 3 rows */
     gap: 20px;
-    width: 90vw; /* Ensure grid takes 90% of viewport width */
+    width: 90vw; /* Ensure grid takes 90% of viewport width  */
     max-width: 1000px;
     margin: 0 auto;
 }
