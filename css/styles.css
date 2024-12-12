@@ -1,0 +1,93 @@
+/* Basic styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000000; /* Black background */
+    color: #fff; /* White text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+h1 {
+    color: #FF1493; /* Hot pink color for the title */
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+/* Grid container */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-template-rows: auto auto auto; /* 3 rows with auto height */
+    gap: 20px;
+    width: 90vw; /* Ensure grid takes 90% of viewport width */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Grid item (box) */
+.box {
+    background-color: #FF1493; /* Pink background for boxes */
+    color: #fff;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+
+/* Surprise message */
+#surpriseMessage {
+    color: #FF1493; /* Pink color for surprise message */
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 800px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+        width: 80vw; /* Adjust width on smaller screens */
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Adjust title size on smaller screens */
+    }
+
+    .box {
+        font-size: 1rem; /* Adjust box text size */
+    }
+
+    #surpriseMessage {
+        font-size: 1rem; /* Adjust surprise message size */
+    }
+}
+
+@media (max-width: 500px) {
+    .grid {
+        grid-template-columns: 1fr; /* 1 column for very small screens */
+        width: 100%; /* Take up full width on very small screens */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Adjust title size further on very small screens */
+    }
+
+    .box {
+        font-size: 0.9rem; /* Adjust box text size further */
+    }
+
+    #surpriseMessage {
+        font-size: 1rem; /* Adjust surprise message size */
+    }
+}
