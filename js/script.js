@@ -1,18 +1,35 @@
-// Select all the boxes
-const boxes = document.querySelectorAll('.box');
+document.addEventListener('DOMContentLoaded', () => {
+  // Define the links for each day
+  const surprises = {
+      day1: '../html/imageCircle.html',
+      day2: 'surprise2.html',
+      day3: 'surprise3.html',
+      day4: 'surprise4.html',
+      day5: 'surprise5.html',
+      day6: 'surprise6.html',
+      day7: 'surprise7.html',
+      day8: 'surprise8.html',
+      day9: 'surprise9.html',
+      day10: 'surprise10.html',
+      day11: 'surprise11.html',
+      day12: 'surprise12.html',
+  };
 
-// The surprise message element
-const surpriseMessage = document.getElementById('surpriseMessage');
+  // Get all boxes
+  const boxes = document.querySelectorAll('.box');
+  const surpriseMessage = document.getElementById('surpriseMessage');
 
-// Add an event listener to each box
-boxes.forEach((box, index) => {
-    box.addEventListener('click', () => {
-        // Display a surprise message when a box is clicked
-        surpriseMessage.textContent = `You unlocked Surprise for Day ${index + 1}!`;
-        
-        // Optionally, change the background color of the box to indicate it was clicked
-        box.style.backgroundColor = '#28e91e'; // Light green color after click
+  // Add event listener for each box
+  boxes.forEach(box => {
+      box.addEventListener('click', () => {
+          const day = box.id; // Get the ID of the clicked box
+          const link = surprises[day]; // Get the corresponding link
 
-        // You can add more functionality to reveal surprises, like opening images or text
-    });
+          // Update the message with the surprise link
+          surpriseMessage.innerHTML = `Click <a href="${link}">here</a> to reveal your surprise for ${box.textContent}!`;
+
+          // Add a class to gray out the clicked box
+          box.classList.add('clicked');
+      });
+  });
 });
