@@ -2,17 +2,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Define the links for each day
     const surprises = {
         day1: 'html/imageCircle.html',
-        day2: 'surprise2.html',
-        day3: 'surprise3.html',
-        day4: 'surprise4.html',
-        day5: 'surprise5.html',
-        day6: 'surprise6.html',
-        day7: 'surprise7.html',
-        day8: 'surprise8.html',
-        day9: 'surprise9.html',
-        day10: 'surprise10.html',
-        day11: 'surprise11.html',
-        day12: 'surprise12.html',
+        day2: 'html/day2.html',
+        day3: 'html/day3.html',
+        day4: 'html/day4.html',
+        day5: 'html/day5.html',
+        day6: 'html/day6.html',
+        day7: 'html/day7.html',
+        day8: 'html/day8.html',
+        day9: 'html/day9.html',
+        day10: 'html/day10.html',
+        day11: 'html/day11.html',
+        day12: 'html/day12.html',
     };
   
     // Get all boxes

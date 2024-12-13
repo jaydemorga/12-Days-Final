@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coupon Booklet</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body Styling */
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Coupon Container */
+        .coupon-container {
+            max-width: 400px;
+            width: 90%;
+        }
+
+        /* Single Coupon Card */
+        .coupon {
+            background: #fff;
+            border: 2px dashed #d32f2f;
+            border-radius: 10px;
+            margin: 10px 0;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Coupon Title */
+        .coupon h2 {
+            font-size: 1.5rem;
+            color: #d32f2f;
+            margin-bottom: 10px;
+        }
+
+        /* Coupon Description */
+        .coupon p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Ribbon Style */
+        .ribbon {
+            position: absolute;
+            top: 10px;
+            left: -35px;
+            background-color: #d32f2f;
+            color: white;
+            text-transform: uppercase;
+            padding: 5px 40px;
+            transform: rotate(-45deg);
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Footer Note */
+        .footer-note {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <!-- Coupon Booklet Container -->
+    <div class="coupon-container">
+        <!-- Coupon 1 -->
+        <div class="coupon">
+            <div class="ribbon">Special</div>
+            <h2>One Free Hug</h2>
+            <p>Redeem this coupon for a warm, comforting hug. Valid anytime, anywhere!</p>
+        </div>
+
+        <!-- Coupon 2 -->
+        <div class="coupon">
+            <div class="ribbon">Love</div>
+            <h2>One Free Kiss</h2>
+            <p>Redeem this coupon for a kiss from me, no questions asked!</p>
+        </div>
+
+        <!-- Coupon 3 -->
+        <div class="coupon">
+            <div class="ribbon">Delicious</div>
+            <h2>Homemade 3-Course Dinner</h2>
+            <p>Let me spoil you with a delicious 3-course meal made with love by yours truly.</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-note">
+            * Coupons never expire. Redeem whenever your heart desires! *
+        </div>
+        <a href="../index.html">Back</a>
+    </div>
+</body>
+</html>
